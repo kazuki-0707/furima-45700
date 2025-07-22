@@ -29,9 +29,7 @@
 | ------------------ | ---------- | ------------------------------ |
 | user_id            | references | null: false, foreign_key: true |
 | item_id            | references | null: false, foreign_key: true |
-| shipping_post_code | string     | null: false |
-| shipping_address   | text       | null: false |
-| phone              | string     | null: false |
+
 
 
 ## addresses テーブル

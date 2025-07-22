@@ -11,7 +11,6 @@
 | profile            | text   | null: false |
 
 
-
 ## items テーブル
 
 | Column       | Type       | Options                        |
@@ -23,6 +22,7 @@
 | category     | string     | null: false |
 | user_id      | references | foreign_key: true |
 
+
 ## purchases テーブル
 
 | Column             | Type       | Options                        |
@@ -32,3 +32,14 @@
 | shipping_post_code | string     | null: false |
 | shipping_address   | text       | null: false |
 | phone              | string     | null: false |
+
+
+## addresses テーブル
+
+| Column          | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| purchase_id  | references | null: false, foreign_key: true |
+| post_code    | string     | null: false |
+| address      | string     | null: false |
+| phone_number | string     | null: false |
+

@@ -16,7 +16,7 @@
 
 
 has_many :items, dependent: :destroy
-has_many :purchases, dependent: :destroy
+has_many :orders, dependent: :destroy
 
 
 ## items テーブル
@@ -34,10 +34,10 @@ has_many :purchases, dependent: :destroy
 | user               | references | null: false, foreign_key: true |
 
 belongs_to :user
-has_one :purchase, dependent: :destroy
+has_one :order, dependent: :destroy
 
 
-## purchases テーブル
+## orders テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -62,4 +62,4 @@ has_one :address, dependent: :destroy
 | purchase         | references | null: false, foreign_key: true |
 
 
-belongs_to :purchase
+belongs_to :order

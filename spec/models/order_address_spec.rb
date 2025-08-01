@@ -19,6 +19,18 @@ RSpec.describe OrderAddress, type: :model do
   end
 
   context '購入できない場合' do
+    it 'ユーザー情報が紐づいていないと購入できない' do
+      @order_address.user_id = nil
+      @order_address.valid?
+      expect(@order_address.errors.full_messages).to include("User can't be blank")
+    end
+
+    it '商品情報が紐づいていないと購入できない' do
+      @order_address.item_id = nil
+      @order_address.valid?
+      expect(@order_address.errors.full_messages).to include("Item can't be blank")
+    end
+
     it '郵便番号が空だと購入できない' do
       @order_address.postal_code = ''
       @order_address.valid?

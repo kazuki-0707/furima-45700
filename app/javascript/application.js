@@ -2,5 +2,5 @@
 import "@hotwired/turbo-rails"
 import "@hotwired/stimulus"
 import "controllers"
-import "./price_calculation"
-import "./card"
+//import "./price_calculation"
+//import "./card"

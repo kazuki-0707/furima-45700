@@ -4,9 +4,10 @@ class OrdersController < ApplicationController
   before_action :move_to_root
 
   def index
-    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @order_address = OrderAddress.new
+    gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
   end
+
 
   def create
     @order_address = OrderAddress.new(order_address_params)

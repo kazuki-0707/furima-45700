@@ -4,4 +4,3 @@ import "@hotwired/stimulus"
 import "controllers"
 import "./price_calculation"
 import "./card"
-

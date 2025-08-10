@@ -32,3 +32,18 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+# bundle の設定を永続化
+set :bundle_flags, '--deployment'
+set :bundle_path, -> { shared_path.join('bundle') }
+
+# デプロイ時に bundle config を設定
+before 'bundler:install', :set_bundle_config
+
+task :set_bundle_config do
+  on roles(:app) do
+    within shared_path do
+      execute :bundle, 'config', 'set', 'force_ruby_platform', 'true'
+    end
+  end
+end

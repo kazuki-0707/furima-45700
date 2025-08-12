@@ -34,8 +34,8 @@ namespace :deploy do
 end
 
 # bundle の設定を永続化
-set :bundle_flags, '--deployment'
 set :bundle_path, -> { shared_path.join('bundle') }
+set :bundle_flags, '--deployment --quiet --force-ruby-platform'
 
 # デプロイ時に bundle config を設定
 before 'bundler:install', :set_bundle_config
